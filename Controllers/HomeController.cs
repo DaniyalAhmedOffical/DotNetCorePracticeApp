@@ -31,36 +31,56 @@ namespace DotNetCorePracticeApp.Controllers
             // View data view practice end
 
 
-            ViewBag.data1 = "viewbag in c#";
+            //ViewBag ki practice start 
 
-            ViewBag.data2 = 22;
-            
-            string[] arr = { "Daniyal", "Ahmed", "22", "viewbagarr" };
+            //   ViewBag.data1 = "viewbag in c#";
 
-            ViewBag.data3 = arr;
+            //   ViewBag.data2 = 22;
 
-            ViewBag.data4 = new List<string>()
-            {
-                "Ahmed","Developer","21","viewbaglist"
-            };
+            //   string[] arr = { "Daniyal", "Ahmed", "22", "viewbagarr" };
 
-         //   ViewBag sy viewdata access krny k liye 
-            ViewData["viewdataname"] = "Daniyal";
+            //   ViewBag.data3 = arr;
+
+            //   ViewBag.data4 = new List<string>()
+            //   {
+            //       "Ahmed","Developer","21","viewbaglist"
+            //   };
+
+            ////   ViewBag sy viewdata access krny k liye 
+            //   ViewData["viewdataname"] = "Daniyal";
 
 
 
+            //ViewBag ki practice end 
 
+
+            //tempData practice start
+
+            TempData["data3"] = "temp data ";
+            TempData["tem"] = "tempdata about";
+            TempData.Keep();
+            TempData["templist"] = new List<string>()
+                {
+
+                         "Ahmed","Developer","21","viewbaglist"
+
+                };
             return View();
 
         }
 
         public IActionResult About()
         {
+            TempData["data3"] = "temp data ";
+
+
+            TempData.Keep("tem");
             return View();
         }
 
         public IActionResult Contact()
         {
+            TempData.Keep("tem");
             return View();
         }
     }

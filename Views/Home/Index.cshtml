@@ -79,4 +79,25 @@ view data html
 
 *@
 
+@TempData["data3"]
+<br />
+
+@TempData["tem"]
+
+@{
+
+    if(TempData["temlist"] != null)
+    {
+        foreach (var item in (List<string>)TempData["templist"])
+        {
+            <h2>@item</h2>
+
+        }
+    }
+    else
+    {
+        <h2>No data found</h2>
+    }
+
+ }
 
