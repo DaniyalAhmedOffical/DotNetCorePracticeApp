@@ -1,11 +1,56 @@
-﻿
+﻿@using DotNetCorePracticeApp.Model;
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    var students = ViewData["myStudent"] as List<StudentModel>;
+
 }
 
 <h1>Index</h1>
+
+
+
+<table>
+
+    <tr>
+        <th>
+            RoLL no
+        </th>
+
+
+        <th>
+            Name
+        </th>
+
+        <th>
+            Stand
+        </th>
+    </tr>
+
+
+
+    
+        @foreach (var std in students)
+        {
+      <tr>
+        <td>
+            @std.rollNo
+        </td>
+
+
+        <td>
+            @std.Name
+        </td>
+
+        <td>
+            @std.Stand
+        </td>
+      </tr>      
+        }
+    
+</table>
 
 @* 
 @ViewBag.data1

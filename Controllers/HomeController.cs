@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DotNetCorePracticeApp.Model;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetCorePracticeApp.Controllers
 {
@@ -56,31 +57,41 @@ namespace DotNetCorePracticeApp.Controllers
 
             //tempData practice start
 
-            TempData["data3"] = "temp data ";
-            TempData["tem"] = "tempdata about";
-            TempData.Keep();
-            TempData["templist"] = new List<string>()
-                {
+            //TempData["data3"] = "temp data ";
+            //TempData["tem"] = "tempdata about";
+            //TempData.Keep();
+            //TempData["templist"] = new List<string>()
+            //    {
 
-                         "Ahmed","Developer","21","viewbaglist"
+            //             "Ahmed","Developer","21","viewbaglist"
 
-                };
+            //    };
+
+
+            var student = new List<StudentModel>
+            {
+                new StudentModel {rollNo = 1 , Name = "Daniyal", Stand=12},
+                new StudentModel {rollNo = 2 , Name = "Ahmed", Stand=11},
+                new StudentModel {rollNo = 3 , Name = "Ali", Stand=10},
+            };
+
+            ViewData["myStudent"] = student;
             return View();
 
         }
 
         public IActionResult About()
         {
-            TempData["data3"] = "temp data ";
+            //TempData["data3"] = "temp data ";
 
 
-            TempData.Keep("tem");
+            //TempData.Keep("tem");
             return View();
         }
 
         public IActionResult Contact()
         {
-            TempData.Keep("tem");
+            //TempData.Keep("tem");
             return View();
         }
     }
