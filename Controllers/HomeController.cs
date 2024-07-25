@@ -1,10 +1,38 @@
-﻿using DotNetCorePracticeApp.Model;
+﻿    using DotNetCorePracticeApp.Model;
+using DotNetCorePracticeApp.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 
 namespace DotNetCorePracticeApp.Controllers
 {
     public class HomeController : Controller
+
+
+
     {
+
+        private readonly ILogger<HomeController> _logger;
+
+        private readonly StudentRepository _studentRepository = null;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+            _studentRepository = new StudentRepository();
+        }
+
+        public List<StudentModel> getAllStudents(){
+            return _studentRepository.getAllStudents();
+
+        }
+
+        public StudentModel getById(int id) {
+        
+        return _studentRepository.getStudentById(id);  
+        
+        
+        }
+
         public IActionResult Index()
         {
             // View data view practice 
@@ -68,14 +96,16 @@ namespace DotNetCorePracticeApp.Controllers
             //    };
 
 
-            var student = new List<StudentModel>
-            {
-                new StudentModel {rollNo = 1 , Name = "Daniyal", Stand=12},
-                new StudentModel {rollNo = 2 , Name = "Ahmed", Stand=11},
-                new StudentModel {rollNo = 3 , Name = "Ali", Stand=10},
-            };
+            //ye m ny model class ki video k liye use kiya tha 
 
-            ViewData["myStudent"] = student;
+            //var student = new List<StudentModel>
+            //{
+            //    new StudentModel {rollNo = 1 , Name = "Daniyal", Stand=12},
+            //    new StudentModel {rollNo = 2 , Name = "Ahmed", Stand=11},
+            //    new StudentModel {rollNo = 3 , Name = "Ali", Stand=10},
+            //};
+
+            //ViewData["myStudent"] = student;
             return View();
 
         }
