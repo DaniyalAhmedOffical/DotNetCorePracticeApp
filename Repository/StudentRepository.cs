@@ -22,6 +22,12 @@ namespace DotNetCorePracticeApp.Repository
         new StudentModel {rollNo = 1 , Name = "Daniyal", Stand=12},
         new StudentModel { rollNo = 2, Name = "Ahmed", Stand = 11 },
         new StudentModel { rollNo = 3, Name = "Ali", Stand = 10 },
+
+         new StudentModel { rollNo = 3, Name = "saqib",Stand = 11 },
+
+
+        new StudentModel { rollNo = 3, Name = "Talha " , Stand = 10 },
+
     };
         }
     }
