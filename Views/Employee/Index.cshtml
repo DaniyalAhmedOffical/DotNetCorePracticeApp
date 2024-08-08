@@ -1,0 +1,37 @@
+﻿@using DotNetCorePracticeApp.Model;
+   
+@{
+    ViewData["Title"] = "Index";
+
+    var myEmployees = ViewData["myEmployee"] as List<Employee>;
+    <h2>@ViewData["Title"]</h2>
+
+    @if (myEmployees != null)
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>EmpId</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in myEmployees)
+                {
+                    <tr>
+                        <td>@employee.EmpId</td>
+                        <td>@employee.Name</td>
+                        <td>@employee.Position</td>
+                        <td>@employee.Salary</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No employees found.</p>
+    }
+}
