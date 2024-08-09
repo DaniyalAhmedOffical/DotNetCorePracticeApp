@@ -18,9 +18,9 @@ namespace DotNetCorePracticeApp.Controllers
                 new Model.Employee { EmpId = 104, Name = "Nomi" , Position = "Peon", Salary = 100},
             };
 
-            ViewData["myEmployee"] = myEmployees;
+           // ViewData["myEmployee"] = myEmployees;
 
-            return View();
+            return View(myEmployees);
         }
     }
 }
