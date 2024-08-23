@@ -1,4 +1,4 @@
-﻿
+﻿@model List<StudentModel>
 @{
     ViewData["Title"] = "About";
     Layout = "~/Views/Shared/_Layout2.cshtml";
@@ -7,6 +7,31 @@
 }
 
 <h1>About</h1>
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>EmpId</th>
+            <th>Name</th>
+            <th>Stand</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.rollNo</td>
+                <td>@student.Name</td>
+                <td>@student.Stand</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
 
 
 @TempData["tem"]

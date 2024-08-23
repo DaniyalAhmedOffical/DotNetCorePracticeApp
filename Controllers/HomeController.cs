@@ -1,4 +1,4 @@
-﻿    using DotNetCorePracticeApp.Model;
+﻿using DotNetCorePracticeApp.Model;
 using DotNetCorePracticeApp.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
@@ -98,15 +98,15 @@ namespace DotNetCorePracticeApp.Controllers
 
             //ye m ny model class ki video k liye use kiya tha 
 
-            //var student = new List<StudentModel>
-            //{
-            //    new StudentModel {rollNo = 1 , Name = "Daniyal", Stand=12},
-            //    new StudentModel {rollNo = 2 , Name = "Ahmed", Stand=11},
-            //    new StudentModel {rollNo = 3 , Name = "Ali", Stand=10},
-            //};
+            var student = new List<StudentModel>
+            {
+                new StudentModel {rollNo = 1 , Name = "Daniyal", Stand=12},
+                new StudentModel {rollNo = 2 , Name = "Ahmed", Stand=11},
+                new StudentModel {rollNo = 3 , Name = "Ali", Stand=10},
+            };
 
-            //ViewData["myStudent"] = student;
-            return View();
+         //   ViewData["myStudent"] = student;
+            return View(student);
 
         }
 
@@ -115,8 +115,16 @@ namespace DotNetCorePracticeApp.Controllers
             //TempData["data3"] = "temp data ";
 
 
-            //TempData.Keep("tem");
-            return View();
+            //TempData.Keep("tem"); var student = new List<StudentModel>
+            var student = new List<StudentModel>
+            {
+                new StudentModel {rollNo = 1 , Name = "Daniyal", Stand=12},
+                new StudentModel {rollNo = 2 , Name = "Ahmed", Stand=11},
+                new StudentModel {rollNo = 3 , Name = "Ali", Stand=10},
+            };
+
+            //   ViewData["myStudent"] = student;
+            return View(student);
         }
 
         public IActionResult Contact()

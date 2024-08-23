@@ -1,4 +1,5 @@
 ﻿@using DotNetCorePracticeApp.Model;
+@model List<StudentModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -11,14 +12,46 @@
 <h1>Index</h1>
 <h2>Shamas</h2>
 
+@* 
+<table>
+    <thead>
+        <tr>
+            <th>EmpId</th>
+            <th>Name</th>
+            <th>Stand</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.rollNo</td>
+                <td>@student.Name</td>
+                <td>@student.Stand</td>
+              
+            </tr>
+        }
+    </tbody>
+</table>
+ *@
+
+
 <a href="/Home/Contact">Contact 1</a>
 <br />
 
-@Html.ActionLink("contach page 2","Contact", "Home")
+@Html.ActionLink("Contact page 2","Contact", "Home")
+
+<br />
+
+<a href="@Url.Action("Contact", "Home")">contact 3</a>
 
 
+<br />
 
 
+<a  asp-controller = "Home" asp-action="Contact"  >Contact 4</a> 
+
+<img src="" alt="Alternate Text" />
 @* 
 
 <table>
@@ -60,7 +93,7 @@
         }
     
 </table>
- *@
+
 @* 
 @ViewBag.data1
 
@@ -157,5 +190,5 @@ view data html
 
 
 
- }
+ 
 
